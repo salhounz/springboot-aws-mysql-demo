@@ -24,8 +24,12 @@ public class User {
 	@Column(name = "email")
 	private String email;
 
+	public User() {
+
+	}
+
 	public User(String firstName, String lastName, String email) {
-		super();
+		// super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
