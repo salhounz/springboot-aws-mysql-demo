@@ -21,10 +21,6 @@ import com.codysullins.springboot.repository.UserRepository;
 @RequestMapping("/api/users")
 public class UserController {
 
-	/*
-	 * Create, Read, Update, Delete for 'usersDB' - Create user - Read getAllUsers,
-	 * getUserByID - Update user - Delete userByID
-	 */
 	@Autowired
 	private UserRepository userRepo;
 
@@ -49,7 +45,7 @@ public class UserController {
 	public User update(@RequestBody User user, @PathVariable("id") Long userId) {
 		User updatedUsr = userRepo.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("Sorry! No user with ID: " + userId + " located."));
-		// Update user here
+		// Update information here
 		updatedUsr.setFirstName(user.getFirstName());
 		updatedUsr.setLastName(user.getLastName());
 		updatedUsr.setEmail(user.getEmail());
@@ -57,15 +53,15 @@ public class UserController {
 		return userRepo.save(updatedUsr);
 
 	}
+
 	@DeleteMapping("{id}")
 	public ResponseEntity<User> deleteUser(@PathVariable("id") Long userId) {
 		User deletedUsr = userRepo.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("Sorry! No user with ID: " + userId + " located."));
 		userRepo.delete(deletedUsr);
-		
+
 		return ResponseEntity.ok().build();
-		
-		
+
 	}
 
 }
