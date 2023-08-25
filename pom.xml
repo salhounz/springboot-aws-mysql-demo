@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.codysullins</groupId>
-	<artifactId>springboot-aws-demo</artifactId>
+	<artifactId>springboot-aws-mysql-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-aws-demo</name>
-	<description>Demo Project w/ Spring Boot and AWS</description>
+	<name>springboot-aws-mysql-demo</name>
+	<description>Demo Project w/ Spring Boot, AWS, and MySQL</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
